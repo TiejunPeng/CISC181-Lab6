@@ -1,4 +1,4 @@
-package pkgCore;
+ package pkgCore;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -32,7 +32,7 @@ public class HandPoker extends Hand implements Comparable {
 	 * 
 	 *        CRC - Each hand score has a private attribute of an Array of
 	 *        CardRankCount. Each instance of CardRankCount shows the Card, it's
-	 *        ranking and the number of instances. Example:
+	 *        r anking and the number of instances. Example:
 	 * 
 	 *        If Hand was 5H-2K-5D-AH-KH There would be three rows in the CRC matrix
 	 *        Card 2, position 1, count 1 Card 5, position 2, count 2 Card K,
@@ -52,7 +52,7 @@ public class HandPoker extends Hand implements Comparable {
 	private ArrayList<CardRankCount> CRC = null;
 	
 
-	/**
+	/**  
 	 * @author BRG
 	 * @version Lab #1
 	 * @since Lab #1

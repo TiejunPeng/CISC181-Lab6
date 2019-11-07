@@ -280,8 +280,10 @@ public class GamePlay {
 	 */
 	private ArrayList<HandPoker> getBestMadeHands() throws HandException
 	{
-		//TODO: Return the best made hands in the game
 		ArrayList<HandPoker> BestGameHands = new ArrayList<HandPoker>();
+		for(Player p : GamePlayers) {
+			BestGameHands.addAll(getBestMadeHands(p));
+		}
 		return BestGameHands;
 	}
 	
@@ -295,8 +297,7 @@ public class GamePlay {
 	 */
 	public HandScorePoker getWinningScore() throws HandException
 	{
-		//TODO: return the best made hand's hand score
-		return null;
+		return getBestMadeHands().get(0).getHandScorePoker();
 	}
 	
 	/**
@@ -310,9 +311,13 @@ public class GamePlay {
 	 * @throws HandException 
 	 */
 	public ArrayList<Player> GetGameWinners() throws HandException {
-		
 		ArrayList<Player> WinningPlayers = new ArrayList<Player>();
-		//TODO: Return an array list of the winning players in the game
+		HandScorePoker WinnerHand = getWinningScore();
+		for(Player p: GamePlayers) {
+			if(getBestMadeHands(p).get(0).getHS().equals(WinnerHand)) {
+				WinningPlayers.add(p);
+			}
+		}
 		return WinningPlayers;
 	}
 
